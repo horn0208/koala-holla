@@ -36,7 +36,7 @@ function getKoalas(){
   }).then(function(response){
     console.log('back from /koalas GET', response);
     //call function to display koalas
-
+    displayKoalas(response);
   }).catch(function(err){
     console.log('error in GET /koalas', err);
     alert('Error getting koalas');
@@ -45,6 +45,24 @@ function getKoalas(){
 
 function saveKoala( newKoala ){
   console.log( 'in saveKoala', newKoala );
-  // ajax call to server to get koalas
+  // ajax call to server to get koalas (POST?)
  
+
+  // run getKoalas to show the newest addition
+
+}
+
+function displayKoalas(response){
+  let el = $('#viewKoalas');
+  el.empty();
+  //loop through response and display in table on DOM
+  for (let i=0; i<response.length; i++){
+    el.append(`<tr>
+    <td>${response[i].name}</td>
+    <td>${response[i].age}</td>
+    <td>${response[i].gender}</td>
+    <td>${response[i].ready_for_transfer}</td>
+    <td>${response[i].notes}</td>
+    </tr>`);
+  }
 }
