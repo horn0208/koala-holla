@@ -34,7 +34,7 @@ function getKoalas(){
     method: 'GET',
     url: '/koalas'
   }).then(function(response){
-    console.log('back from /koalas GET');
+    console.log('back from /koalas GET', response);
     //call function to display koalas
 
   }).catch(function(err){

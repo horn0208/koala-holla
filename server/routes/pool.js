@@ -1,7 +1,7 @@
 const pg = require('pg');
 const pool = new pg.Pool({
     database: 'koala_holla_inventory',
-    host: 'Local',
+    host: 'localhost',
     port: 5432,
     max: 12,
     idleTimeoutMillis: 30000
