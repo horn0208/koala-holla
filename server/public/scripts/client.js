@@ -45,11 +45,19 @@ function getKoalas(){
 
 function saveKoala( newKoala ){
   console.log( 'in saveKoala', newKoala );
-  // ajax call to server to get koalas (POST?)
- 
-
-  // run getKoalas to show the newest addition
-
+  // ajax call to server to get koalas (POST)
+ $.ajax({
+   method: 'POST',
+   url: '/koalas',
+   data: newKoala
+ }).then(function(response){
+   console.log('back from POST:', response);
+   // run getKoalas to show the newest addition
+   getKoalas();
+ }).catch(function(err){
+   console.log('error in POST /koalas', err);
+   alert('Error collecting new Koala :(');
+ });
 }
 
 function displayKoalas(response){
