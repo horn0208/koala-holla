@@ -71,8 +71,13 @@ function displayKoalas(response){
     <td>${response[i].gender}</td>
     <td>${response[i].ready_for_transfer}</td>
     <td>${response[i].notes}</td>
-    <td></td>
-    <td><button class="deleteKoalaButton" data-index=${i}>Delete</button></td>
+    <td id="transferBtnCell${i}"></td>
+    <td><button class="deleteKoalaButton" data-deleteIndex="${i}">Delete</button></td>
     </tr>`);
+    //add conditional to hide or display 'ready to transfer' button
+    if (response[i].ready_for_transfer === false){
+      $(`#transferBtnCell${i}`).append(`<button class="transferButton" data-transferIndex="${i}">Transfer Koala</button>`)
+    }
   }
+
 }
