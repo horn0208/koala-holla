@@ -1,5 +1,4 @@
 const express = require('express');
-const { sendStatus } = require('express/lib/response');
 const koalaRouter = express.Router();
 
 // DB CONNECTION
@@ -29,7 +28,7 @@ koalaRouter.post('/', (req, res)=>{
         res.sendStatus(201);
     }).catch((err)=>{
         console.log(err);
-        res.sendStatus(500);
+        res.sendStatus(500)
     })
 })
 
