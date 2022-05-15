@@ -24,7 +24,9 @@ function setupClickListeners() {
     saveKoala( koalaToSend );
     // clear inputs
     $('input').val('');
-  }); 
+  });
+  $('#viewKoalas').on('click', '.deleteKoalaButton', deleteKoala);
+  $('#viewKoalas').on('click', '.transferButton', transferKoala);
 }
 
 function getKoalas(){
@@ -74,10 +76,19 @@ function displayKoalas(response){
     <td id="transferBtnCell${i}"></td>
     <td><button class="deleteKoalaButton" data-deleteIndex="${i}">Delete</button></td>
     </tr>`);
-    //add conditional to hide or display 'ready to transfer' button
+    // conditional to add 'ready to transfer' button
     if (response[i].ready_for_transfer === false){
       $(`#transferBtnCell${i}`).append(`<button class="transferButton" data-transferIndex="${i}">Transfer Koala</button>`)
     }
   }
+}
 
+function deleteKoala(){
+  console.log('in deleteKoala');
+  // TODO: ajax DELETE request
+}
+
+function transferKoala(){
+  console.log('in transferKoala');
+  // TODO: ajax UPDATE request
 }
