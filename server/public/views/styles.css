@@ -1,5 +1,5 @@
 body {
-    background-color:honeydew;
+    background-color:#c0fdff;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     margin: 0;
 }
@@ -7,7 +7,7 @@ body {
 header {
     display: flex;
     width: 100%;
-    background-color: dodgerblue;
+    background-color: #6abfff;
 }
 
 .icon {
@@ -23,11 +23,33 @@ header {
 
 #addKoala {
     margin:12px;
+    text-align: center;
+}
+
+#inputs-box {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+button {
+    border-radius: 8px;
+    background-color: #85c8fbcb;
+    border-width: 1.5px;
+}
+
+button:hover {
+    background-color: #d8bbff;
 }
 
 #all-koalas {
     text-align: center;
     padding-top: 30px;
+}
+
+input, select, #addButton {
+    margin: 5px;
+    padding: 2px;
 }
 
 table {
@@ -37,7 +59,19 @@ table {
 }
 
 td, th {
-    border: 1px solid black;
+    border: 1px solid rgba(0, 0, 0, 0.373);
     padding: 0.5rem;
     text-align: left;
+}
+
+th {
+    background-color: #d8bbff;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #d0d1ff9b;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #c8e7ff76;
 }
