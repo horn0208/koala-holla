@@ -24,6 +24,7 @@ function setupClickListeners() {
     saveKoala( koalaToSend );
     // clear inputs
     $('input').val('');
+    $('select').val('');
   });
   $('#viewKoalas').on('click', '.deleteKoalaButton', deleteKoala);
   $('#viewKoalas').on('click', '.transferButton', transferKoala);

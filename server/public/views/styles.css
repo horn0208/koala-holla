@@ -1,10 +1,39 @@
 body {
-    background-color: turquoise;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color:honeydew;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    width: 100%;
+    background-color: dodgerblue;
+}
+
+.icon {
+    max-width: 150px;
+    max-height: 150px;
+    padding: 12px;
+}
+
+#address-box {
+    max-height: 150px;
+    padding-left: 12px;
+}
+
+#addKoala {
+    margin:12px;
+}
+
+#all-koalas {
+    text-align: center;
+    padding-top: 30px;
 }
 
 table {
     border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 td, th {
