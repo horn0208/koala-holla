@@ -13,3 +13,4 @@ INSERT INTO koalas (name, age, gender, ready_for_transfer, notes) VALUES ('Logan
 INSERT INTO koalas (name, age, gender, ready_for_transfer, notes) VALUES ('Charlie', '9', 'M', 'true', 'Favorite band is Nirvana');
 INSERT INTO koalas (name, age, gender, ready_for_transfer, notes) VALUES ('Betsy', '4', 'F', 'true', 'Has a pet iguana');
 SELECT * FROM koalas;
+DELETE FROM koalas WHERE id=8;

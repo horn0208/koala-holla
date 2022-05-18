@@ -88,6 +88,17 @@ function displayKoalas(response){
 function deleteKoala(){
   console.log('in deleteKoala, id:', $(this).data('id'));
   // TODO: ajax DELETE request
+  $.ajax({
+    method: 'DELETE',
+    url: `/koalas?id=${$(this).data('id')}`
+  }).then(function(response){
+    console.log('back from DELETE:', response);
+    //run getKoalas to show deletion on the DOM
+    getKoalas();
+  }).catch(function(err){
+    console.log(err);
+    alert('Error deleting koala');
+  })
 }
 
 function transferKoala(){
