@@ -104,4 +104,15 @@ function deleteKoala(){
 function transferKoala(){
   console.log('in transferKoala, id:', $(this).data('id'));
   // TODO: ajax UPDATE request
+  $.ajax({
+    method: 'PUT',
+    url: `/koalas?id=${$(this).data('id')}`
+  }).then(function(response){
+    console.log('back from PUT:', response);
+    //run getKoalas to show updated koala on DOM
+    getKoalas();
+  }).catch(function(err){
+    console.log(err);
+    alert('Error changing ready to transfer status');
+  })
 }
