@@ -12,6 +12,10 @@ INSERT INTO koalas (name, age, gender, ready_for_transfer, notes) VALUES ('Ororo
 INSERT INTO koalas (name, age, gender, ready_for_transfer, notes) VALUES ('Logan', '15', 'M', 'false', 'Loves the sauna');
 INSERT INTO koalas (name, age, gender, ready_for_transfer, notes) VALUES ('Charlie', '9', 'M', 'true', 'Favorite band is Nirvana');
 INSERT INTO koalas (name, age, gender, ready_for_transfer, notes) VALUES ('Betsy', '4', 'F', 'true', 'Has a pet iguana');
+
 SELECT * FROM koalas;
 DELETE FROM koalas WHERE id=8;
 UPDATE koalas SET ready_for_transfer=true WHERE id=9;
+
+-- toggle between true/false for ready to transfer:
+UPDATE koalas SET ready_for_transfer=NOT ready_for_transfer WHERE id=10;

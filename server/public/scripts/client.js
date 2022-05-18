@@ -80,7 +80,9 @@ function displayKoalas(response){
     </tr>`);
     // conditional to add 'ready to transfer' button
     if (response[i].ready_for_transfer === false){
-      $(`#transferBtnCell${i}`).append(`<button class="transferButton" data-id="${response[i].id}">Transfer Koala</button>`)
+      $(`#transferBtnCell${i}`).append(`<button class="transferButton" data-id="${response[i].id}">Ready for transfer</button>`)
+    } else if (response[i].ready_for_transfer === true){
+      $(`#transferBtnCell${i}`).append(`<button class="transferButton" data-id="${response[i].id}">Not ready</button>`)
     }
   }
 }
