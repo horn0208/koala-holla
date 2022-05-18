@@ -26,6 +26,7 @@ function setupClickListeners() {
     $('input').val('');
     $('select').val('');
   });
+  // other click handlers:
   $('#viewKoalas').on('click', '.deleteKoalaButton', deleteKoala);
   $('#viewKoalas').on('click', '.transferButton', transferKoala);
 }
@@ -75,21 +76,21 @@ function displayKoalas(response){
     <td>${response[i].ready_for_transfer}</td>
     <td>${response[i].notes}</td>
     <td id="transferBtnCell${i}"></td>
-    <td><button class="deleteKoalaButton" data-deleteIndex="${i}">Delete</button></td>
+    <td><button class="deleteKoalaButton" data-id="${response[i].id}">Delete</button></td>
     </tr>`);
     // conditional to add 'ready to transfer' button
     if (response[i].ready_for_transfer === false){
-      $(`#transferBtnCell${i}`).append(`<button class="transferButton" data-transferIndex="${i}">Transfer Koala</button>`)
+      $(`#transferBtnCell${i}`).append(`<button class="transferButton" data-id="${response[i].id}">Transfer Koala</button>`)
     }
   }
 }
 
 function deleteKoala(){
-  console.log('in deleteKoala');
+  console.log('in deleteKoala, id:', $(this).data('id'));
   // TODO: ajax DELETE request
 }
 
 function transferKoala(){
-  console.log('in transferKoala');
+  console.log('in transferKoala, id:', $(this).data('id'));
   // TODO: ajax UPDATE request
 }
