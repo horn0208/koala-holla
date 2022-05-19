@@ -7,7 +7,7 @@ const pool = require('../routes/pool');
 // GET
 koalaRouter.get('/', (req, res)=>{
     console.log('/koalas GET');
-    const queryString = 'SELECT * FROM koalas';
+    const queryString = 'SELECT * FROM koalas ORDER BY id DESC';
     pool.query(queryString).then((result)=>{
         res.send(result.rows);
     }).catch((err)=>{
